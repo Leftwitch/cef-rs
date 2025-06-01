@@ -11590,7 +11590,7 @@ impl Default for RequestContext {
 
 /// See [`_cef_browser_t`] for more documentation.
 #[derive(Clone)]
-pub struct Browser(RefGuard<_cef_browser_t>);
+pub struct Browser(pub RefGuard<_cef_browser_t>);
 pub trait ImplBrowser: Clone + Sized + Rc {
     #[doc = "See [`_cef_browser_t::is_valid`] for more documentation."]
     fn is_valid(&self) -> ::std::os::raw::c_int;
